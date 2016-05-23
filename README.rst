@@ -14,6 +14,9 @@ Quick start
     INSTALLED_APPS = (
         ...
         'reusable_blog_v1',
+        'django.contrib.staticfiles',
+	'django_forms_bootstrap',
+	'disqus',
     )
 
 2. Include the blog URLconf in your project urls.py like this::
