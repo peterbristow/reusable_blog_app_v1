@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .forms import BlogPostForm
@@ -41,6 +42,7 @@ def top_posts(request):
     return render(request, "blog/blogposts.html", {'posts': posts})
 
 
+@login_required
 def new_post(request):
     if request.method == "POST":
         form = BlogPostForm(request.POST, request.FILES)
